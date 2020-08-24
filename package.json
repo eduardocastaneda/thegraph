@@ -7,12 +7,12 @@
     "start": "node ./src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/eduardocastaneda/"
-  },
+  "repository": "https://github.com/eduardocastaneda/thegraph",
   "author": "Eduardo Castaneda",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "apollo-server": "^2.16.1",
+    "graphql": "^15.3.0"
+  },
   "devDependencies": {}
 }
