@@ -14,5 +14,7 @@
     "apollo-server": "^2.16.1",
     "graphql": "^15.3.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "prettier": "2.1.0"
+  }
 }
