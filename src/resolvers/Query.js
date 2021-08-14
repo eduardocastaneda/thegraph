@@ -1,7 +1,7 @@
 module.exports = {
   Query: {
-    async books(root, args, { models }) {
-      return models.Book.findAll();
+    async users(root, args, { models }) {
+      return models.User.findAll();
     },
   },
 };

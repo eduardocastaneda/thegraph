@@ -1,9 +1,16 @@
+const bcrypt = require("bcrypt");
+
 module.exports = {
   Mutation: {
-    async addBook(root, { title, author }, { models }) {
-      return models.Book.create({
-        title,
-        author,
+    async createUser(root, { username, password, firstName, lastName }, { models }) {
+      const encryptedPassword = await bcrypt.hash(password, 10);
+
+      return models.User.create({
+        username,
+        password: encryptedPassword,
+        firstName,
+        lastName,
+        isActive: true
       });
     },
   },

@@ -2,6 +2,6 @@ const { gql } = require('apollo-server');
 
 module.exports = gql`
   type Mutation {
-    addBook(title: String!, author: String!): Book!
+    createUser(username: String!, password: String!, firstName: String!, lastName: String!): User!
   }
 `;
