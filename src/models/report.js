@@ -15,8 +15,8 @@ module.exports = (sequelize, DataTypes) => {
     {
       year: DataTypes.INTEGER,
       month: DataTypes.INTEGER,
-      data: DataTypes.JSONB,
-      isLocked: DataTypes.BOOLEAN
+      days: DataTypes.JSONB,
+      isLocked: DataTypes.BOOLEAN,
     },
     {
       sequelize,
