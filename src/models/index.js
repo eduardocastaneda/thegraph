@@ -1,20 +1,21 @@
 'use strict';
 
+const { processFileUploads } = require('apollo-server-core');
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
-// const env = process.env.NODE_ENV || 'development';
-// const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
-let sequelize;
-// if (config.use_env_variable) {
-//   sequelize = new Sequelize(process.env[config.use_env_variable], config);
-// } else {
-// sequelize = new Sequelize(config.database, config.username, config.password, config);
-sequelize = new Sequelize('postgres://user:user@localhost:5432/dev');
-// }
+let sequelize = new Sequelize(
+  process.env.POSTGRES_DB,
+  process.env.POSTGRES_USER,
+  process.env.POSTGRES_PASSWORD,
+  {
+    host: process.env.POSTGRES_HOST,
+    dialect: 'postgres',
+  }
+);
 
 fs.readdirSync(__dirname)
   .filter((file) => {
