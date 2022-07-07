@@ -3,7 +3,13 @@ const resolvers = require('./resolvers');
 const typeDefs = require('./typeDefs');
 const models = require('./models');
 
-const server = new ApolloServer({ typeDefs, resolvers, context: { models } });
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: { models },
+  introspection: true,
+  playground: true,
+});
 
 models.sequelize.authenticate();
 models.sequelize.sync();
