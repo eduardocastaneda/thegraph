@@ -21,7 +21,7 @@ module.exports = {
         where: {
           year,
           month,
-          UserId: 3,
+          UserId: user.id,
         },
       });
     },

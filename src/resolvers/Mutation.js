@@ -24,7 +24,7 @@ module.exports = {
         month,
         isLocked: false,
         days,
-        UserId: 3,
+        UserId: user.id,
       });
     },
     async updateReport(root, { input: { id, days } }, { models, user }) {
@@ -37,7 +37,7 @@ module.exports = {
         {
           where: {
             id,
-            UserId: 3,
+            UserId: user.id,
           },
           returning: true,
           plain: true,
