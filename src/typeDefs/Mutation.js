@@ -5,5 +5,6 @@ module.exports = gql`
     createUser(username: String!, password: String!, firstName: String!, lastName: String!): User!
     createReport(input: CreateReportInput!): Report!
     updateReport(input: UpdateReportInput!): Report!
+    login(username: String!, password: String!): Login
   }
 `;
